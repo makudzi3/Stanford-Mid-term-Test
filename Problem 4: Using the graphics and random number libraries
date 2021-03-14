@@ -39,3 +39,21 @@ moveFrog(0, -SQUARE_SIZE);
 }
 }
 /* Moves the frog by dx/dy as long as it remains inside the world */
+/* Returns true if the point (x, y) is inside the frog's world */
+private boolean insideFroggerWorld(double x, double y) {
+return (x >= 0 && x <= NCOLUMNS * SQUARE_SIZE &&
+ y >= 0 && y <= NROWS * SQUARE_SIZE);
+}
+/* Private constants */
+private static final int SQUARE_SIZE = 75;
+private static final int NROWS = 4;
+private static final int NCOLUMNS = 7;
+/* Private instance variables */
+private GImage frog; /* The image of the frog */
+private double fx; /* The x-coordinate of the frog's center */
+private double fy; /* The y-coordinate of the frog's center */
+/* Sets the graphics window size */
+public static final int APPLICATION_WIDTH = NCOLUMNS * SQUARE_SIZE;
+public static final int APPLICATION_HEIGHT = NROWS * SQUARE_SIZE;
+}
+
